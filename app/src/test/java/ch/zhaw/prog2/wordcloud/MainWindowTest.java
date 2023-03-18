@@ -6,9 +6,9 @@ package ch.zhaw.prog2.wordcloud;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AppTest {
+class MainWindowTest {
     @Test void appHasAGreeting() {
-        App classUnderTest = new App();
+        MainWindow classUnderTest = new MainWindow();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 }
