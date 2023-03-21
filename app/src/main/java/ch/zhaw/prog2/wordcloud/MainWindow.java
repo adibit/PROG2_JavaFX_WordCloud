@@ -34,19 +34,20 @@ public class MainWindow extends Application {
  */
 @Override
 public void start(Stage primaryStage) throws Exception {
-    openMainWindow(primaryStage);
+    Pane rootNode = openMainWindow();
+    
+    Scene scene = new Scene(rootNode);
+    primaryStage.setScene(scene);
+    primaryStage.setTitle("JavaFX_Workshop");
+    primaryStage.show();
 }
-private void openMainWindow(Stage stage) throws IOException {
-    FXMLLoader loader =new FXMLLoader(getClass().getResource(" MainWindow.fxml "));
+private Pane openMainWindow() throws IOException {
+    FXMLLoader loader =new FXMLLoader(getClass().getResource("/MainWindow.fxml"));
     
     Pane rootNode = loader.load();
     
-    Scene scene = new Scene(rootNode);
-    stage.setScene(scene);
-    
     MainWindowController controller = loader.getController();
     
-    stage.show();
-    
+    return rootNode;
 }
 }
